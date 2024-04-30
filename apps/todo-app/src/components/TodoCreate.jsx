@@ -22,6 +22,7 @@ function TodoCreate({ onCreateTodo }) {  // Aşağıda her kullanımda props.onC
     return (
         <div className='todo-create'>
             <input 
+            className='todo-input'
             onChange={(e) => {
                 setNewTodo(e.target.value)}
             } 

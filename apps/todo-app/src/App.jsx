@@ -10,11 +10,27 @@ function App() {
   const createTodo = (newTodo) => {
     setTodos([...todos, newTodo])
   }
+
+  const deleteTodo = (todoId) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== todoId)
+    setTodos(filteredTodos)  // filteredTodos zaten bir dizi olduğu için setTodos içinde köşeli paranteze alınmadı.
+  } 
+
+  const updateTodo = (newTodo) => {
+    const mappedTodos = todos.map((todo) => {
+      if(todo.id !== newTodo.id) {
+        return todo;
+      }
+      return newTodo;
+    })
+    setTodos(mappedTodos);  // mappedTodos zaten bir dizi olduğu için setTodos içinde köşeli paranteze alınmadı.
+  }
+
   return (
     <div className='app'>
       <div className='wrapper'>
         <TodoCreate onCreateTodo={createTodo}/>
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} onDeleteTodo={deleteTodo} onUpdateTodo={updateTodo}/>
       </div>
     </div>
   )
