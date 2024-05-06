@@ -1,0 +1,21 @@
+.navbar {
+    background-color: antiquewhite;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    font-size: 18px;
+    font-family: Cascadia Code Regular;
+}
+
+.navbar ul li a {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: underline;
+}
